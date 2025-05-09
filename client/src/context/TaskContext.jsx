@@ -69,7 +69,7 @@ export const TaskProvider = ({ children }) => {
   };
 
   return (
-    <TaskContext.Provider value={{url,getUserProjects,user,token,setUser, tasks, addTask, updateTask, deleteTask,projects,setProjects}}>
+    <TaskContext.Provider value={{url,getUserProjects,user,token,setUser, addTask, updateTask, deleteTask,projects,setProjects}}>
       {children}
     </TaskContext.Provider>
   );

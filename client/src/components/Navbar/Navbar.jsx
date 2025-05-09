@@ -28,9 +28,6 @@ const Navbar = () => {
           <li className="nav-item">
             <a href="/login" className="nav-links">login</a>
           </li>
-          <li className="nav-item">
-            <a href="/signup" className="nav-links">signup</a>
-          </li>
         </ul>
         <p>
           {token
@@ -40,7 +37,7 @@ const Navbar = () => {
           </>
           
           : 
-           <a href="/login" className="nav-links">login</a>
+           <a href="/login" className="nav-links">Please login</a>
           }
         </p>
       </div>
