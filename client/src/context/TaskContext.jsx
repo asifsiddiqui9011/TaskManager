@@ -6,6 +6,7 @@ export const TaskContext = createContext();
 
 export const TaskProvider = ({ children }) => {
   
+  const url = 'https://taskmanager-053o.onrender.com/api'
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
   const [user, setUser] = useState(null);
@@ -13,7 +14,7 @@ export const TaskProvider = ({ children }) => {
   //function to get user projects
   const getUserProjects = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/project", {
+      const response = await fetch(`${url}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -48,32 +49,7 @@ export const TaskProvider = ({ children }) => {
       getUserProjects();
     }
   },[token])
-  const [tasks, setTasks] = useState([
-    {
-        id: 1,
-        title: "Design Homepage",
-        description: "Create the layout for the homepage",
-        status: "In Progress",
-        dateCreated: "2025-05-09 10:30 AM",
-        dateCompleted: ""
-      },
-      {
-        id: 2,
-        title: "Fix Bug #411",
-        description: "Resolve the issue with the login modal",
-        status: "Pending",
-        dateCreated: "2025-05-08 02:15 PM",
-        dateCompleted: ""
-      },
-      {
-        id: 3,
-        title: "Deploy Release",
-        description: "Deploy version 2.0 to production",
-        status: "Completed",
-        dateCreated: "2025-05-07 09:00 AM",
-        dateCompleted: "2025-05-09 05:00 PM"
-      }
-  ]);
+  
 
   // Function to add a new task
   const addTask = (newTask) => {
@@ -93,7 +69,7 @@ export const TaskProvider = ({ children }) => {
   };
 
   return (
-    <TaskContext.Provider value={{getUserProjects,user,token,setUser, tasks, addTask, updateTask, deleteTask,projects,setProjects}}>
+    <TaskContext.Provider value={{url,getUserProjects,user,token,setUser, tasks, addTask, updateTask, deleteTask,projects,setProjects}}>
       {children}
     </TaskContext.Provider>
   );

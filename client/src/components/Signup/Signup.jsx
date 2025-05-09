@@ -42,7 +42,7 @@ const countries = [
 
 const SignupForm = () => {
   
-  const { setUser } = useContext(TaskContext);
+  const { setUser,url } = useContext(TaskContext);
 
   const [formData, setFormData] = useState({
     email: '',
@@ -110,7 +110,7 @@ const SignupForm = () => {
     setLoading(true);
     
     try {
-      const response = await fetch('http://localhost:3000/api/signup', {
+      const response = await fetch(`${url}/signup`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)

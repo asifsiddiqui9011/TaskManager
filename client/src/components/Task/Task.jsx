@@ -5,7 +5,7 @@ import { TaskContext } from '../../context/TaskContext';
 
 const Task = ({ task, projectId }) => {
 
-  const{getUserProjects} = useContext(TaskContext);
+  const{getUserProjects,url} = useContext(TaskContext);
   const [editModalOpen, setEditModalOpen] = useState(false);
   const [editData, setEditData] = useState({
     title: task.title,
@@ -40,7 +40,7 @@ const Task = ({ task, projectId }) => {
     try {
       const token = localStorage.getItem('token');
       const response = await fetch(
-        `http://localhost:3000/api/project/${projectId}/task/${task._id}`, {
+        `${url}/project/${projectId}/task/${task._id}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
@@ -71,7 +71,7 @@ const Task = ({ task, projectId }) => {
       try {
         const token = localStorage.getItem('token');
         const response = await fetch(
-          `http://localhost:3000/api/project/${projectId}/task/${task._id}`, {
+          `${url}/project/${projectId}/task/${task._id}`, {
             method: 'DELETE',
             headers: {
               'Content-Type': 'application/json',
