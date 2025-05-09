@@ -1,0 +1,75 @@
+/* ProjectDesc.css */
+
+/* Container for the entire project description and tasks */
+.project-desc-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 25px;
+  background-color: #f9fafc;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the project description section */
+.project-desc {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border-left: 4px solid #3498db;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Project title */
+.project-desc h2 {
+  margin-top: 0;
+  font-size: 24px;
+  color: #333333;
+}
+
+/* Project detail paragraphs */
+.project-desc p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555555;
+  margin: 8px 0;
+}
+
+/* Header for the tasks section */
+.project-desc-container h2 {
+  font-size: 22px;
+  color: #333333;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 5px;
+}
+
+/* Default paragraph styling in the container (if any) */
+.project-desc-container p {
+  font-size: 16px;
+  color: #666666;
+}
+
+/* Optional: Spacing between Task components */
+.task {
+  margin-bottom: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .project-desc-container {
+    padding: 15px;
+  }
+
+  .project-desc {
+    padding: 15px;
+  }
+
+  .project-desc h2 {
+    font-size: 20px;
+  }
+
+  .project-desc-container h2 {
+    font-size: 18px;
+  }
+}

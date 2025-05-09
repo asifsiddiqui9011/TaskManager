@@ -1,0 +1,32 @@
+# Ignore node_modules directory (for JavaScript projects)
+node_modules/
+
+# Ignore .env files (for environment variables)
+.env
+.env.*
+
+# Ignore build artifacts (for various languages)
+build/
+dist/
+out/
+bin/
+obj/
+
+# Ignore log files
+*.log
+
+# Ignore temporary files created by editors
+*.swp  # Vim
+*.swo  # Vim
+*.tmp  # Generic temporary files
+.DS_Store # macOS
+Thumbs.db # Windows
+
+# Ignore IDE-specific files
+.idea/    # IntelliJ IDEA
+.vscode/  # Visual Studio Code
+*.suo     # Visual Studio
+*.user    # Visual Studio
+*.sln     # Visual Studio
+*.csproj.user # Visual Studio
+/out/ #GoLang
